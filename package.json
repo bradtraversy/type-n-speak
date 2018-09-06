@@ -1,5 +1,5 @@
 {
-  "name": "type_n_speak",
+  "name": "type-n-speak",
   "homepage": "https://bradtraversy.github.io/type-n-speak",
   "version": "1.0.0",
   "description": "Text to speak and synthesis app using the web speech API",
