@@ -1,0 +1,15 @@
+{
+  "name": "type_n_speak",
+  "homepage": "https://bradtraversy.github.io/type-n-speak",
+  "version": "1.0.0",
+  "description": "Text to speak and synthesis app using the web speech API",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Brad Traversy",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^1.2.0"
+  }
+}
