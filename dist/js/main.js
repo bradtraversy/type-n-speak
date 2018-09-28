@@ -11,6 +11,13 @@ const pitch = document.querySelector('#pitch');
 const pitchValue = document.querySelector('#pitch-value');
 const body = document.querySelector('body');
 
+//Browser identifier
+// Firefox 1.0+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+
+// Chrome 1+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+
 // Init voices array
 let voices = [];
 
@@ -31,9 +38,20 @@ const getVoices = () => {
   });
 };
 
-getVoices();
+//Line 35, 36 causes voice list duplication
+/*getVoices();
 if (synth.onvoiceschanged !== undefined) {
   synth.onvoiceschanged = getVoices;
+}*/
+
+//Fix for duplication, run code depending on the browser
+if (isFirefox) {
+    getVoices();
+}
+if (isChrome) {
+    if (synth.onvoiceschanged !== undefined) {
+        synth.onvoiceschanged = getVoices;
+    }
 }
 
 // Speak
